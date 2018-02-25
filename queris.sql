@@ -1,20 +1,14 @@
-use db1;
-select 
-libros.id, libros.Titulo, autores.Autor, editoriales.id, editoriales.Editorial
-from 
-libros,autores,editoriales
-where
-libros.id= 'fw_771-h' and
-libros.id_autor = autores.id and
-libros.id_editorial = editoriales.id;
+USE db1; 
+
+SELECT 
+libros.id,libros.nombre AS titulo,autores.nombre AS autor, editoriales.id AS editorial 
+FROM 
+libros,editoriales,autores 
+WHERE 
+libros.id = 'fw_771-h' AND 
+libros.id_autor = autores.id AND 
+libros.id_editorial = editoriales.id; 
 
 
 
-use db1;
-alter table autores
-change  autor Autor varchar(100);
-alter table editoriales
-change  Autor Editorial varchar(100);
-alter table libros 
-change nombre Titulo varchar(100);
   
